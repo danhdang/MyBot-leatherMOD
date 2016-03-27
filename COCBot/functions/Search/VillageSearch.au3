@@ -312,7 +312,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 
 		If $noMatchTxt <> "" Then
 			;SetLog(_PadStringCenter(" " & StringMid($noMatchTxt, 3) & " ", 50, "~"), $COLOR_PURPLE)
-			SetLog($GetResourcesTXT, $COLOR_RED, "Lucida Console", 7.5)
+			SetLog($GetResourcesTXT, $COLOR_BLACK, "Lucida Console", 7.5)
 			SetLog("      " & StringMid($noMatchTxt, 3), $COLOR_RED, "Lucida Console", 7.5)
 			$logwrited = True
 		EndIf
