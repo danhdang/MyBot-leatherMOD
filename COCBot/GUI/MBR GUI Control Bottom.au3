@@ -203,16 +203,18 @@ Func btnStart()
 		GUICtrlSetState($chkBackground, $GUI_DISABLE)
 
 		For $i = $FirstControlToHide To $LastControlToHide ; Save state of all controls on tabs
-			; Added SmartZap tab check to list - Added by LunaEclipse
-			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabUpgrades Or $i = $tabEndBattle Or $i = $tabExpert Or $i= $tabAttackCSV Or $i = $tabSmartZap Then ContinueLoop ; exclude tabs
+			; Added $tabSmartZap to the list - Added by LunaEclipse
+			; Added $tabAndroid to the list - Added by LunaEclipse
+			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabUpgrades Or $i = $tabEndBattle Or $i = $tabExpert Or $i= $tabAttackCSV Or $i = $tabSmartZap Or $i = $tabAndroid Then ContinueLoop ; exclude tabs
 			If $pEnabled And $i = $btnDeletePBmessages Then ContinueLoop ; exclude the DeleteAllMesages button when PushBullet is enabled
 			If $i = $btnMakeScreenshot Then ContinueLoop ; exclude
 			If $i = $divider Then ContinueLoop ; exclude divider
 			$iPrevState[$i] = GUICtrlGetState($i)
 		Next
 		For $i = $FirstControlToHide To $LastControlToHide ; Disable all controls in 1 go on all tabs
-			; Added SmartZap tab check to list - Added by LunaEclipse
-			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabUpgrades Or $i = $tabEndBattle Or $i = $tabExpert Or $i=$tabAttackCSV Or $i = $tabSmartZap  Then ContinueLoop ; exclude tabs
+			; Added $tabSmartZap to the list - Added by LunaEclipse
+			; Added $tabAndroid to the list - Added by LunaEclipse
+			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabUpgrades Or $i = $tabEndBattle Or $i = $tabExpert or $i= $tabAttackCSV Or $i = $tabSmartZap Or $i = $tabAndroid Then ContinueLoop ; exclude tabs
 			If $pEnabled And $i = $btnDeletePBmessages Then ContinueLoop ; exclude the DeleteAllMesages button when PushBullet is enabled
 			If $i = $btnMakeScreenshot Then ContinueLoop ; exclude
 			If $i = $divider Then ContinueLoop ; exclude divider
@@ -284,8 +286,9 @@ Func btnStop()
 		SetRedrawBotWindow(False)
 
 		For $i = $FirstControlToHide To $LastControlToHide ; Restore previous state of controls
-			; Added SmartZap tab check to list - Added by LunaEclipse
-			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabEndBattle Or $i = $tabExpert  Or $i = $tabSmartZap  Then ContinueLoop ; exclude tabs
+			; Added $tabSmartZap to the list - Added by LunaEclipse
+			; Added $tabAndroid to the list - Added by LunaEclipse
+			If $i = $tabGeneral Or $i = $tabSearch Or $i = $tabAttack Or $i = $tabAttackAdv Or $i = $tabDonate Or $i = $tabTroops Or $i = $tabMisc Or $i = $tabNotify Or $i = $tabEndBattle Or $i = $tabExpert or $i = $tabSmartZap Or $i = $tabAndroid Then ContinueLoop ; exclude tabs
 			If $pEnabled And $i = $btnDeletePBmessages Then ContinueLoop ; exclude the DeleteAllMesages button when PushBullet is enabled
 			If $i = $btnMakeScreenshot Then ContinueLoop ; exclude
 			If $i = $divider Then ContinueLoop ; exclude divider
@@ -343,6 +346,7 @@ Func btnAttackNowTS()
 	EndIf
 EndFunc   ;==>btnAttackNowTS
 
+; Modified by LunaEclipse
 Func btnHide()
     ResumeAndroid()
 	WinGetAndroidHandle()
@@ -351,6 +355,10 @@ Func btnHide()
 
 	If $Hide = False Then
 		GUICtrlSetData($btnHide, GetTranslated(13,25, "Show"))
+		; Show the taskbar icon now while Bluestack is still off the screen
+                ; Add by LunaEclipse
+		hideTaskBarIcon($HWnD)
+		; Add - end
 		Local $a = WinGetPos($HWnD)
 		$botPos[0] = $a[0]
 		$botPos[1] = $a[1]
@@ -358,7 +366,10 @@ Func btnHide()
 		$Hide = True
 	Else
 		GUICtrlSetData($btnHide, GetTranslated(13,11, "Hide"))
-
+		; Hide the taskbar icon now as Bluestacks has been moved off the screen
+                ; Add by LunaEclipse
+		showTaskBarIcon($HWnD)
+		; Add - end
 		If $botPos[0] = -32000 Then
 			WinMove2($HWnD, "", 0, 0)
 		Else

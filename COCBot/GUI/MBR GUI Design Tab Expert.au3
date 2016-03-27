@@ -92,9 +92,11 @@ $grpOnStartBot = GUICtrlCreateGroup(GetTranslated(10,12, "When Bot Starts"), $x 
 		GUICtrlSetLimit(-1, 2)
 		GUICtrlSetFont(-1, 8)
 	$y += 23
-	$cmbDisposeWindowsCond = GUICtrlCreateCombo("", $x + 15, $y, 160, 20, BitOR($CBS_DROPDOWNLIST, $CBS_AUTOHSCROLL))
-		GUICtrlSetData(-1, GetTranslated(10,22, "0,0: BlueStacks-Bot") & "|" & GetTranslated(10,23, "0,0: Bot-BlueStacks") & "|" & GetTranslated(10,24, "SNAP: Bot TopRight to BS") &"|" & GetTranslated(10,25, "SNAP: Bot TopLeft to BS") & "|" & GetTranslated(10,26, "SNAP: Bot BottomRight to BS") & "|" & GetTranslated(10,27, "SNAP: Bot BottomLeft to BS") , GetTranslated(10,24, "SNAP: Bot TopRight to BS"))
-		$txtTip &= @CRLF & GetTranslated(10,28, "0,0: Reposition BS screen to position 0,0 on windows desktop and align Bot window right or left to it.") & @CRLF & GetTranslated(10,29, "SNAP: Only reorder windows, Align Bot window to BlueStacks window at Top Right, Top Left, Bottom Right or Bottom Left.")
+	; Modified by LunaEclipse
+	$cmbDisposeWindowsCond = GUICtrlCreateCombo("", $x, $y, 175, 20, BitOR($CBS_DROPDOWNLIST, $CBS_AUTOHSCROLL))
+		GUICtrlSetData(-1, GetTranslated(10,22, "0,0: BlueStacks-Bot") & "|" & GetTranslated(10,23, "0,0: Bot-BlueStacks") & "|" & "SNAP BS: Bot TopRight to BS" & "|" & "SNAP BS: Bot TopLeft to BS" & "|" & "SNAP BS: Bot BottomRight to BS" & "|" & "SNAP BS: Bot BottomLeft to BS" & "|" & "SNAP BOT: BS TopRight to Bot" & "|" & "SNAP BOT: BS TopLeft to Bot" & "|" & "SNAP BOT: BS BottomRight to Bot" & "|" & "SNAP BOT: BS BottomLeft to Bot", "SNAP BOT: BS TopLeft to Bot")
+		$txtTip &= @CRLF & GetTranslated(10,28, "0,0: Reposition BS screen to position 0,0 on windows desktop and align Bot window right or left to it.") & @CRLF & "SNAP BS: Only reorder windows, Align Bot window to BlueStacks window at Top Right, Top Left, Bottom Right or Bottom Left." & @CRLF & "SNAP BOT: Only reorder windows, Align BlueStacks window to Bot window at Top Right, Top Left, Bottom Right or Bottom Left."
+	; Modified by LunaEclipse - end
 		GUICtrlSetTip(-1, $txtTip)
 		GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)

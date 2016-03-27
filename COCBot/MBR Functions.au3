@@ -256,6 +256,10 @@
 #include "functions\Village\ClanLevel.au3"
 #include "functions\Village\StarBonus.au3"
 
+; Android files - Added by LunaEclipse
+#include "functions\Android\modifyAndroid.au3"
+#include "functions\Android\taskbarIcon.au3"
+
 ; Unit Info file for casting lightning spell - Added by LunaEclipse
 #include "functions\Attack\unitInfo.au3"
 

@@ -12,8 +12,6 @@
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
-
-
 Func saveConfig() ;Saves the controls settings to the config
 	;General Settings--------------------------------------------------------------------------
 
@@ -1343,7 +1341,8 @@ Func saveConfig() ;Saves the controls settings to the config
 			IniWrite($config, "debug", "debugmakeimgcsv", 1)
 		Else
 			IniWrite($config, "debug", "debugmakeimgcsv", 0)
-	    EndIf
+		EndIf
+
 		IniWrite($config, "debug", "debugresourcesoffset", $debugresourcesoffset)
 		IniWrite($config, "debug", "continuesearchelixirdebug", $continuesearchelixirdebug)
 
@@ -1591,36 +1590,36 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attackCSV", "ClickSpeedFast", 0)
 	EndIf
 
-    ;MilkingAttack Options
-    IniWrite($config, "MilkingAttack", "LocateMine", $MilkFarmLocateMine)
-    IniWrite($config, "MilkingAttack", "LocateElixir", $MilkFarmLocateElixir)
-    IniWrite($config, "MilkingAttack", "LocateDrill", $MilkFarmLocateDrill)
+	;MilkingAttack Options
+	IniWrite($config, "MilkingAttack", "LocateMine", $MilkFarmLocateMine)
+	IniWrite($config, "MilkingAttack", "LocateElixir", $MilkFarmLocateElixir)
+	IniWrite($config, "MilkingAttack", "LocateDrill", $MilkFarmLocateDrill)
 	Local $tempElixirParam = ""
 	For $i = 0 To Ubound($MilkFarmElixirParam) -1
-	   $tempElixirParam  &= $MilkFarmElixirParam[$i] & "|"
-    Next
+		$tempElixirParam  &= $MilkFarmElixirParam[$i] & "|"
+	Next
 	$tempElixirParam = StringLeft($tempElixirParam,StringLen($tempElixirParam) -1 )
-    IniWrite($config, "MilkingAttack", "LocateElixirLevel", $tempElixirParam)
-    IniWrite($config, "MilkingAttack", "MineParam", $MilkFarmMineParam)
-    IniWrite($config, "MilkingAttack", "DrillParam", $MilkFarmDrillParam)
+	IniWrite($config, "MilkingAttack", "LocateElixirLevel", $tempElixirParam)
+	IniWrite($config, "MilkingAttack", "MineParam", $MilkFarmMineParam)
+	IniWrite($config, "MilkingAttack", "DrillParam", $MilkFarmDrillParam)
 
-    IniWrite($config, "MilkingAttack", "AttackElixir", $MilkFarmAttackElixirExtractors)
-    IniWrite($config, "MilkingAttack", "AttackMine", $MilkFarmAttackGoldMines)
-    IniWrite($config, "MilkingAttack", "AttackDrill", $MilkFarmAttackDarkDrills)
-    IniWrite($config, "MilkingAttack", "LimitGold", $MilkFarmLimitGold)
-    IniWrite($config, "MilkingAttack", "LimitElixir", $MilkFarmLimitElixir)
-    IniWrite($config, "MilkingAttack", "LimitDark", $MilkFarmLimitDark)
-    IniWrite($config, "MilkingAttack", "MaxTiles", $MilkFarmResMaxTilesFromBorder)
+	IniWrite($config, "MilkingAttack", "AttackElixir", $MilkFarmAttackElixirExtractors)
+	IniWrite($config, "MilkingAttack", "AttackMine", $MilkFarmAttackGoldMines)
+	IniWrite($config, "MilkingAttack", "AttackDrill", $MilkFarmAttackDarkDrills)
+	IniWrite($config, "MilkingAttack", "LimitGold", $MilkFarmLimitGold)
+	IniWrite($config, "MilkingAttack", "LimitElixir", $MilkFarmLimitElixir)
+	IniWrite($config, "MilkingAttack", "LimitDark", $MilkFarmLimitDark)
+	IniWrite($config, "MilkingAttack", "MaxTiles", $MilkFarmResMaxTilesFromBorder)
 
-    IniWrite($config, "MilkingAttack", "TroopForWaveMin", $MilkFarmTroopForWaveMin)
-    IniWrite($config, "MilkingAttack", "TroopForWaveMax", $MilkFarmTroopForWaveMax)
-    IniWrite($config, "MilkingAttack", "MaxWaves", $MilkFarmTroopMaxWaves)
-    IniWrite($config, "MilkingAttack", "DelayBetweenWavesMin", $MilkFarmDelayFromWavesMin)
-    IniWrite($config, "MilkingAttack", "DelayBetweenWavesMax", $MilkFarmDelayFromWavesMax)
-;~     IniWrite($config, "MilkingAttack", "SnipeTownHall", $MilkFarmSnipeTh)
-;~     IniWrite($config, "MilkingAttack", "TownhallTiles", $MilkFarmTHMaxTilesFromBorder)
-;~     IniWrite($config, "MilkingAttack", "TownHallAlgorithm", $MilkFarmAlgorithmTh)
-;~     IniWrite($config, "MilkingAttack", "TownHallHitAnyway", $MilkFarmSnipeEvenIfNoExtractorsFound)
+	IniWrite($config, "MilkingAttack", "TroopForWaveMin", $MilkFarmTroopForWaveMin)
+	IniWrite($config, "MilkingAttack", "TroopForWaveMax", $MilkFarmTroopForWaveMax)
+	IniWrite($config, "MilkingAttack", "MaxWaves", $MilkFarmTroopMaxWaves)
+	IniWrite($config, "MilkingAttack", "DelayBetweenWavesMin", $MilkFarmDelayFromWavesMin)
+	IniWrite($config, "MilkingAttack", "DelayBetweenWavesMax", $MilkFarmDelayFromWavesMax)
+;~	IniWrite($config, "MilkingAttack", "SnipeTownHall", $MilkFarmSnipeTh)
+;~	IniWrite($config, "MilkingAttack", "TownhallTiles", $MilkFarmTHMaxTilesFromBorder)
+;~	IniWrite($config, "MilkingAttack", "TownHallAlgorithm", $MilkFarmAlgorithmTh)
+;~	IniWrite($config, "MilkingAttack", "TownHallHitAnyway", $MilkFarmSnipeEvenIfNoExtractorsFound)
 
 	; SmartZap Settings - Added by LunaEclipse
 	If GUICtrlRead($chkSmartLightSpell) = $GUI_CHECKED Then
@@ -1633,13 +1632,24 @@ Func saveConfig() ;Saves the controls settings to the config
 	Else
 		IniWrite($config, "SmartZap", "ZapDBOnly", 0)
 	EndIf
-    If GUICtrlRead($chkSmartZapSaveHeroes) = $GUI_CHECKED Then
-        IniWrite($config, "SmartZap", "THSnipeSaveHeroes", 1)
-    Else
-        IniWrite($config, "SmartZap", "THSnipeSaveHeroes", 0)
-    EndIf
+	If GUICtrlRead($chkSmartZapSaveHeroes) = $GUI_CHECKED Then
+		IniWrite($config, "SmartZap", "THSnipeSaveHeroes", 1)
+	Else
+		IniWrite($config, "SmartZap", "THSnipeSaveHeroes", 0)
+	EndIf
 	IniWrite($config, "SmartZap", "MinDE", GUICtrlRead($txtMinDark))
+	; SmartZap - end
+
+	; Android Settings - Added by LunaEclipse
+	IniWrite($config, "Android", "Emulator", GUICtrlRead($cmbAndroid))
+	IniWrite($config, "Android", "Instance", GUICtrlRead($txtAndroidInstance))
+	If GUICtrlRead($chkHideTaskBar) = $GUI_CHECKED Then
+		IniWrite($config, "Android", "HideTaskBarIcon", 1)
+	Else
+		IniWrite($config, "Android", "HideTaskBarIcon", 0)
+	EndIf
+	; Android Settings - end
 
 	If $hFile <> -1 Then FileClose($hFile)
 
-EndFunc   ;==>saveConfig
+EndFunc	;==>saveConfig

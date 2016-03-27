@@ -1758,10 +1758,24 @@ Func applyConfig($bRedrawAtExit = True) ;Applies the data from config to the con
 		GUICtrlSetState($chkSmartZapSaveHeroes, $GUI_UNCHECKED)
 	EndIf
 	GUICtrlSetData($txtMinDark, $itxtMinDE)
+	; SmartZap - end
 
-
+	; Android Settings - Added by LunaEclipse
+	If _GUICtrlComboBox_FindStringExact($cmbAndroid, String($sAndroid)) <> -1 Then
+		_GUICtrlComboBox_SelectString($cmbAndroid, String($sAndroid))
+	Else
+		_GUICtrlComboBox_SetCurSel($cmbAndroid, 0)
+	EndIf
+	GUICtrlSetData($txtAndroidInstance, $sAndroidInstance)
+	If $ichkHideTaskBar = 1 Then
+		GUICtrlSetState($chkHideTaskBar, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkHideTaskBar, $GUI_UNCHECKED)
+	EndIf
+	modifyAndroid()
+	; Android Settings - end
 
 	; Reenabling window redraw
 	If $bRedrawAtExit Then SetRedrawBotWindow(True)
 
-EndFunc   ;==>applyConfig
+EndFunc	;==>applyConfig

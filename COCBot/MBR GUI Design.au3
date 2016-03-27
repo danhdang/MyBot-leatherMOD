@@ -44,9 +44,14 @@ GUICtrlSetOnEvent(-1, "")
 #include "GUI\MBR GUI Design Tab EndBattle.au3"
 #include "GUI\MBR GUI Design Tab Donate.au3"
 #include "GUI\MBR GUI Design Tab Misc.au3"
+; LunaEclipse - Start
 #include "GUI\MBR GUI Design Tab SmartZap.au3"
+; LunaEclipse - end
 #include "GUI\MBR GUI Design Tab Upgrade.au3"
 #include "GUI\MBR GUI Design Tab Notify.au3"
+; LunaEclipse - Start
+#include "GUI\MBR GUI Design Tab Android.au3"
+; LunaEclipse - end
 #include "GUI\MBR GUI Design Tab Expert.au3"
 #include "GUI\MBR GUI Design Tab Stats.au3" ; includes '$LastControlToHide" on GUI
 #include "GUI\MBR GUI Design Collectors.au3"

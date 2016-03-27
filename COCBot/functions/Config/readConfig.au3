@@ -12,8 +12,6 @@
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
-
-
 Func readConfig() ;Reads config and sets it to the variables
 	If FileExists($building) Then
 		$TownHallPos[0] = IniRead($building, "other", "xTownHall", "-1")
@@ -671,12 +669,18 @@ Func readConfig() ;Reads config and sets it to the variables
 ;~ 		$MilkFarmAlgorithmTh = IniRead($config,"MilkingAttack","TownHallAlgorithm","Bam")
 ;~ 		$MilkFarmSnipeEvenIfNoExtractorsFound = IniRead($config,"MilkingAttack","TownHallHitAnyway","1")
 
+		; Android Settings - Added by LunaEclipse
+		$sAndroid = IniRead($config, "Android", "Emulator", "<No Emulators>")
+		$sAndroidInstance = IniRead($config, "Android", "Instance", "")
+		$ichkHideTaskBar = IniRead($config, "Android", "HideTaskBarIcon", "0")
+		; Android Settings - end
+
 		; SmartZap Settings - Added by LunaEclipse
 		$ichkSmartZap = IniRead($config, "SmartZap", "UseSmartZap", "1")
 		$ichkSmartZapDB = IniRead($config, "SmartZap", "ZapDBOnly", "1")
-        $ichkSmartZapSaveHeroes = IniRead($config, "SmartZap", "THSnipeSaveHeroes", "1")
+		$ichkSmartZapSaveHeroes = IniRead($config, "SmartZap", "THSnipeSaveHeroes", "1")
 		$itxtMinDE = IniRead($config, "SmartZap", "MinDE", "250")
-
+		; SmartZap - end
 
 	Else
 		Return False

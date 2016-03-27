@@ -259,7 +259,7 @@ Global $sCurrProfile
 
 ; Handle Command Line Parameters
 If $aCmdLine[0] > 0 Then
-	$sCurrProfile = StringRegExpReplace($aCmdLine[1], '[/:*?"<>|]', '_')
+	$sCurrProfile = StringRegExpReplace($aCmdLine[1], '[/:*?"<>|]', '_' )
 ElseIf FileExists($sProfilePath & "\profile.ini") Then
 	$sCurrProfile = StringRegExpReplace(IniRead($sProfilePath & "\profile.ini", "general", "defaultprofile", ""), '[/:*?"<>|]', '_')
 
@@ -1174,6 +1174,11 @@ Global $ExtendedCocSearchArea = "15|25|825|625" ; Extended
 ; Similarity ( like tolerance ) 0,00 to 1,00
 Global $ToleranceImgLoc = 0.95
 
+; Android Settings - Added by LunaEclipse
+Global $sAndroid = "<No Emulators>"
+Global $sAndroidInstance = ""
+Global $ichkHideTaskBar = 0
+
 ; SmartZap GUI variables - Added by LunaEclipse
 Global $ichkSmartZap = 1
 Global $ichkSmartZapDB = 1
@@ -1199,4 +1204,3 @@ Global Const $drillLevelSteal[6] = [59, _
 								    251, _
 								    343, _
 								    479]
-
