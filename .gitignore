@@ -58,3 +58,6 @@ EnableMBRDebug.txt
 # Release files
 LastVersion*.txt
 TestVersion*.txt
+
+# Exclusion Release
+!MyBot.run.exe
