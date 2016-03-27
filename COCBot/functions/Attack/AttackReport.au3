@@ -144,11 +144,6 @@ Func AttackReport()
 
 	Local $AtkLogTxt
 	$AtkLogTxt = "" & _NowTime(4) & "|"
-	If $dbBase = true Then
-		$AtkLogTxt &= "  D" & "|"
-	Else
-		$AtkLogTxt &= "  L" & "|"
-	EndIf
 	$AtkLogTxt &= StringFormat("%5d", $iTrophyCurrent) & "|"
 	$AtkLogTxt &= StringFormat("%6d", $SearchCount) & "|"
 	$AtkLogTxt &= StringFormat("%7d", $iGoldLast) & "|"
