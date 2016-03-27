@@ -462,6 +462,9 @@ Func readConfig() ;Reads config and sets it to the variables
 
 		$isldTrainITDelay = IniRead($config, "troop", "TrainITDelay", "20")
 		;barracks boost not saved (no use)
+		
+		$iChkDontRemove = IniRead($config, "troop", "DontRemove", "0")
+		$iChkBarrackSpell = IniRead($config, "Spells", "BarrackSpell", "0")
 
 		; Spells Creation  ---------------------------------------------------------------------
 		$iLightningSpellComp = Int(IniRead($config, "Spells", "LightningSpell", "0"))
@@ -639,6 +642,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkEarthquakeSpell[$LB] = IniRead($config, "attackCSV", "ABEarthquakeSpell", "0")
 		$ichkHasteSpell[$DB] = IniRead($config, "attackCSV", "DBHasteSpell", "0")
 		$ichkHasteSpell[$LB] = IniRead($config, "attackCSV", "ABHasteSpell", "0")
+		$iRadClickSpeedFast = IniRead($config, "attackCSV", "ClickSpeedFast", "1")
 
 		;MilkingAttack
 		$MilkFarmLocateMine = IniRead($config,"MilkingAttack","LocateMine","1")

@@ -347,7 +347,7 @@ Func saveConfig() ;Saves the controls settings to the config
 	EndIf
 
 	If GUICtrlRead($chkUseCCBalanced) = $GUI_CHECKED Then
-		IniWrite($config, "attack", "BalanceCC", 1)
+		IniWrite($config, "attack", "BalanceCC", 0)
 	Else
 		IniWrite($config, "attack", "BalanceCC", 0)
 	EndIf
@@ -915,6 +915,18 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "troop", "TrainITDelay", GUICtrlRead($sldTrainITDelay))
 
 	;barracks boost not saved (no use)
+	
+	If GUICtrlRead($chkDontRemove) = $GUI_CHECKED Then
+		IniWrite($config, "troop", "DontRemove", 1)
+	Else
+		IniWrite($config, "troop", "DontRemove", 0)
+	EndIf
+	
+	If GUICtrlRead($chkBarrackSpell) = $GUI_CHECKED Then
+		IniWrite($config, "Spells", "BarrackSpell", 1)
+	Else
+		IniWrite($config, "Spells", "BarrackSpell", 0)
+	EndIf
 
 	; Spells Creation  ---------------------------------------------------------------------
 	IniWrite($config, "Spells", "LightningSpell", GUICtrlRead($txtNumLightningSpell))
@@ -1572,6 +1584,12 @@ Func saveConfig() ;Saves the controls settings to the config
 	Else
 		IniWrite($config, "attackCSV", "EnableScriptAB", 0)
     EndIf
+
+	If GUICtrlRead($radClickSpeedFast) = $GUI_CHECKED Then
+		IniWrite($config, "attackCSV", "ClickSpeedFast", 1)
+	Else
+		IniWrite($config, "attackCSV", "ClickSpeedFast", 0)
+	EndIf
 
     ;MilkingAttack Options
     IniWrite($config, "MilkingAttack", "LocateMine", $MilkFarmLocateMine)

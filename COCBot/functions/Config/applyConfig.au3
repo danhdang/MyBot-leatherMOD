@@ -1009,6 +1009,18 @@ Func applyConfig($bRedrawAtExit = True) ;Applies the data from config to the con
 	GUICtrlSetData($lbltxtTrainITDelay, "delay " & $isldTrainITDelay & " ms.")
 	;barracks boost not saved (no use)
 
+	If $iChkDontRemove = 1 Then
+		GUICtrlSetState($chkDontRemove, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkDontRemove, $GUI_UNCHECKED)
+	EndIf
+	
+	If $iChkBarrackSpell = 1 Then
+		GUICtrlSetState($chkBarrackSpell, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkBarrackSpell, $GUI_UNCHECKED)
+	EndIf
+
 	; Spells Creation  ---------------------------------------------------------------------
 	GUICtrlSetData($txtNumLightningSpell, $iLightningSpellComp)
 	GUICtrlSetData($txtNumRageSpell, $iRageSpellComp)
@@ -1727,6 +1739,13 @@ Func applyConfig($bRedrawAtExit = True) ;Applies the data from config to the con
 		GUICtrlSetState($chkSmartZapSaveHeroes, $GUI_DISABLE)
 		GUICtrlSetState($txtMinDark, $GUI_DISABLE)
 		GUICtrlSetState($chkSmartLightSpell, $GUI_UNCHECKED)
+	EndIf
+	If $iRadClickSpeedFast = 1 Then
+		GUICtrlSetState($radClickSpeedFast, $GUI_CHECKED)
+		GUICtrlSetState($radClickSpeedNormal, $GUI_UNCHECKED)
+	Else
+		GUICtrlSetState($radClickSpeedFast, $GUI_UNCHECKED)
+		GUICtrlSetState($radClickSpeedNormal, $GUI_CHECKED)
 	EndIf
 	If $ichkSmartZapDB = 1 Then
 		GUICtrlSetState($chkSmartZapDB, $GUI_CHECKED)

@@ -643,6 +643,8 @@ Global $CurBarb = 0, $CurArch = 0, $CurGiant = 0, $CurGobl = 0, $CurWall = 0, $C
 Global $CurMini = 0, $CurHogs = 0, $CurValk = 0, $CurGole = 0, $CurWitc = 0, $CurLava = 0, $CurDrag = 0, $CurPekk = 0
 Global $T[1] = [97]
 Global $ArmyComp
+Global $iChkDontRemove, $chkDontRemove
+Global $iChkBarrackSpell, $chkBarrackSpell
 
 ;Spell Settings
 Global $DonPois = 0, $DonEart = 0, $DonHast = 0
@@ -1069,6 +1071,7 @@ Global $attackcsv_locate_gold_storage = 0
 Global $attackcsv_locate_elixir_storage = 0
 Global $attackcsv_locate_dark_storage = 0
 Global $attackcsv_locate_townhall = 0
+Global $attackcsv_use_red_line = 1
 
 ;Milking Attack
 Global $debugresourcesoffset = 0 ;make images with offset to check correct adjust values
@@ -1148,6 +1151,11 @@ If $aCmdLine[0] > 1 Then
 		EndIf
 	Next
 EndIf
+
+Global $iRadClickSpeedFast, $radClickSpeedFast, $radClickSpeedNormal
+Global $dbBase
+Global $TroopDropNumber = 0
+Global $remainingTroops[12][2]
 
 ; DO NOT ENABLE ! ! ! Only for testing Error behavior ! ! !
 Global $__TEST_ERROR_ADB_DEVICE_NOT_FOUND = False
