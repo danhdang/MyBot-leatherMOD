@@ -38,12 +38,12 @@ EndIf
 ;~ ProcessSetPriority(@AutoItPID, $PROCESS_ABOVENORMAL)
 #include "COCBot\MBR Global Variables.au3"
 
-$sBotTitle = "My Bot " & $sBotVersion & " - leatherMOD v1.0 " ;~ Don't use any non file name supported characters like \ / : * ? " < > |
+$sBotVersion = "v5.3.2" ;~ Don't add more here, but below. Version can't be longer than vX.y.z because it it also use on Checkversion()
+$sBotTitle = "My Bot " & $sBotVersion & " - leatherMOD v1.1 " ;~ Don't use any non file name supported characters like \ / : * ? " < > |
 
 ; Luna Eclipse
 Global $sBotTitleDefault = $sBotTitle
 ; Luna Eclipse - end
-$sBotVersion = "v5.3.2" ;~ Don't add more here, but below. Version can't be longer than vX.y.z because it it also use on Checkversion()
 
 Opt("WinTitleMatchMode", 3) ; Window Title exact match mode
 #include "COCBot\functions\Main Screen\Android.au3"
