@@ -259,7 +259,7 @@ Global $sCurrProfile
 
 ; Handle Command Line Parameters
 If $aCmdLine[0] > 0 Then
-	$sCurrProfile = StringRegExpReplace($aCmdLine[1], '[/:*?"<>|]', '_' )
+	$sCurrProfile = StringRegExpReplace($aCmdLine[1], '[/:*?"<>|]', '_')
 ElseIf FileExists($sProfilePath & "\profile.ini") Then
 	$sCurrProfile = StringRegExpReplace(IniRead($sProfilePath & "\profile.ini", "general", "defaultprofile", ""), '[/:*?"<>|]', '_')
 

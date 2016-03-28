@@ -12,6 +12,8 @@
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
+
+
 Func saveConfig() ;Saves the controls settings to the config
 	;General Settings--------------------------------------------------------------------------
 
@@ -1341,8 +1343,7 @@ Func saveConfig() ;Saves the controls settings to the config
 			IniWrite($config, "debug", "debugmakeimgcsv", 1)
 		Else
 			IniWrite($config, "debug", "debugmakeimgcsv", 0)
-		EndIf
-
+	    EndIf
 		IniWrite($config, "debug", "debugresourcesoffset", $debugresourcesoffset)
 		IniWrite($config, "debug", "continuesearchelixirdebug", $continuesearchelixirdebug)
 
@@ -1596,8 +1597,8 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "MilkingAttack", "LocateDrill", $MilkFarmLocateDrill)
 	Local $tempElixirParam = ""
 	For $i = 0 To Ubound($MilkFarmElixirParam) -1
-		$tempElixirParam  &= $MilkFarmElixirParam[$i] & "|"
-	Next
+	   $tempElixirParam  &= $MilkFarmElixirParam[$i] & "|"
+    Next
 	$tempElixirParam = StringLeft($tempElixirParam,StringLen($tempElixirParam) -1 )
 	IniWrite($config, "MilkingAttack", "LocateElixirLevel", $tempElixirParam)
 	IniWrite($config, "MilkingAttack", "MineParam", $MilkFarmMineParam)

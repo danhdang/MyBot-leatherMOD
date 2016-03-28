@@ -32,9 +32,9 @@ Func WindowsArrange($position, $offsetX = 0, $offsetY = 0)
 		Local $BOTw = $BOTPos[2]
 		Local $BOTh = $BOTPos[3]
 		;Setlog($sBotTitle & " position found:" & $BOTx & "," & $BOTy & " w:" & $BOTw & " h:" & $BOTh)
-		;Setlog(Number($BSx) & " " & Number($BSy) )
+		;Setlog(Number( $BSx) & " " & Number($BSy ) )
 		;SetLog(@DesktopWidth)
-		If Number($BSx) > -30000 and Number($BSy) > -30000 Then
+		If Number( $BSx) > -30000 and Number($BSy ) > -30000 Then
 			Switch $position
 				Case "BS-BOT" ; position left bs, right adjacent BOT
 					$BSHandle = WinMove2($HWnD, "", 0 + Number($offsetX) , 0 + number($offsetY))

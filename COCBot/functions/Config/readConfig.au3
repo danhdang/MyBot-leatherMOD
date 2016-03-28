@@ -12,6 +12,8 @@
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
+
+
 Func readConfig() ;Reads config and sets it to the variables
 	If FileExists($building) Then
 		$TownHallPos[0] = IniRead($building, "other", "xTownHall", "-1")

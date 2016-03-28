@@ -36,7 +36,9 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			If $ichkSmartZap = 1 Then SetLog("Skipping SmartZap to protect your royals!", $COLOR_FUCHSIA)
 		ElseIf Not SmartZap() And $THusedKing = 0 And $THusedQueen = 0 Then
 			Setlog("Wait few sec before close attack")
-			If _Sleep(Random(2, 5, 1) * 1000) Then Return ; wait 2-5 second before exit if king and queen are not dropped
+			If _Sleep(Random(2, 5, 1) * 1000) Then Return ;wait 2-5 second before exit if king and queen are not dropped
+		Else
+			SetLog("King and/or Queen dropped, close attack")
 		EndIf
 
 		;close battle
