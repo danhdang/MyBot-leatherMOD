@@ -398,6 +398,7 @@ Global $ReduceCount, $ReduceGold, $ReduceElixir, $ReduceGoldPlusElixir, $ReduceD
 ;Global $icmbTH
 Global $iChkEnableAfter[$iModeCount], $iCmbMeetGE[$iModeCount], $iChkMeetDE[$iModeCount], $iChkMeetTrophy[$iModeCount], $iChkMeetTH[$iModeCount], $iChkMeetTHO[$iModeCount], $iChkMeetOne[$iModeCount], $iCmbTH[$iModeCount], $iChkWeakBase[$iModeCount]
 Global $chkDBMeetTHO, $chkABMeetTHO, $chkATH
+Global $chkDBNoLeague, $chkABNoLeague, $iChkNoLeague[$iModeCount]
 Global $THLocation
 Global $THx = 0, $THy = 0
 Global $DESLoc

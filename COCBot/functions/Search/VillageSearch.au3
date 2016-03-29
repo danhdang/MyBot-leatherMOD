@@ -149,7 +149,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 		SuspendAndroid()
 
 		Local $noMatchTxt = ""
-		Local $dbBase = False
+		$dbBase = False
 		Local $match[$iModeCount]
 		Local $isModeActive[$iModeCount]
 		For $i = 0 To $iModeCount - 1
@@ -225,52 +225,78 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 
 		If $match[$DB] Or $match[$LB] Then
 			$dbBase = checkDeadBase()
-		EndIf
+	    EndIf
 
-		Local $MilkingExtractorsMatch = 0
+	    Local $MilkingExtractorsMatch = 0
 		$MilkFarmObjectivesSTR = ""
-		If $match[$LB] And $iChkDeploySettings[$LB] = 6 Then ;MilkingAttack
-			If $debugsetlog = 1 Then Setlog("Check Milking...", $COLOR_BLUE)
+		If $match[$LB] and $iChkDeploySettings[$LB] = 6 Then ;MilkingAttack
+			If $debugsetlog=1 Then Setlog("Check Milking...",$COLOR_BLUE)
 			MilkingDetectRedArea()
 			$MilkingExtractorsMatch = MilkingDetectElixirExtractors()
-			If $MilkingExtractorsMatch > 0 Then
+			If $MilkingExtractorsMatch >0 Then
 				$MilkingExtractorsMatch += MilkingDetectMineExtractors() + MilkingDetectDarkExtractors()
 			EndIf
-			If StringLen($MilkFarmObjectivesSTR) > 0 And $debugsetlog = 1 Then
-				Setlog("Match for Milking", $COLOR_BLUE)
+			If StringLen($MilkFarmObjectivesSTR) >0 and $debugsetlog=1 Then
+				Setlog("Match for Milking",$COLOR_BLUE)
 			Else
-				$noMatchTxt &= ", No match for Milking"
+				Setlog("Not a Match for Milking",$COLOR_BLUE)
 			EndIf
 		EndIf
 
-		ResumeAndroid()
+	    ResumeAndroid()
 
 		If _Sleep($iDelayRespond) Then Return
-
-		If $match[$DB] And $dbBase Then
+		If $match[$LB] and $iChkDeploySettings[$LB]=6  and StringLen($MilkFarmObjectivesSTR) >0  Then
+					SetLog($GetResourcesTXT, $COLOR_GREEN, "Lucida Console", 7.5)
+					SetLog("      " & "Milking Attack! ", $COLOR_GREEN, "Lucida Console", 7.5)
+					$logwrited = True
+					$iMatchMode = $LB
+					ExitLoop
+		ElseIf $match[$DB] And $dbBase Then
 			SetLog($GetResourcesTXT, $COLOR_GREEN, "Lucida Console", 7.5)
 			SetLog("      " & "Dead Base Found! ", $COLOR_GREEN, "Lucida Console", 7.5)
 			$logwrited = True
-			$iMatchMode = $DB
+			
 			If $debugDeadBaseImage = 1 Then
 				_CaptureRegion()
 				_GDIPlus_ImageSaveToFile($hBitmap, @ScriptDir & "\Zombies\" & $Date & " at " & $Time & ".png")
 				_WinAPI_DeleteObject($hBitmap)
 			EndIf
-			ExitLoop
-		ElseIf $match[$LB] And $iChkDeploySettings[$LB] = 6 And StringLen($MilkFarmObjectivesSTR) > 0 Then
-			SetLog($GetResourcesTXT, $COLOR_GREEN, "Lucida Console", 7.5)
-			SetLog("      " & "Milking on: " & $MilkingExtractorsMatch &" resources!", $COLOR_GREEN, "Lucida Console", 7.5)
-			$logwrited = True
-			$iMatchMode = $LB
-			ExitLoop
-		ElseIf $match[$LB] And Not $dbBase And $iChkDeploySettings[$LB] <> 6 Then
+
+			If $iChkMeetOne[$DB] = 0 Then
+				If $iChkNoLeague[$DB] = 1 Then
+					If _CheckPixel($aNoLeague, True) Then
+						SetLog("      " & "Dead Base is not in a league.", $COLOR_GREEN, "Lucida Console", 7.5)
+					Else
+						SetLog("      " & "Dead Base is in a league.", $COLOR_RED, "Lucida Console", 7.5)
+						$match[$DB] = False ; skip attack
+					EndIf
+				EndIf
+			EndIf
+			If $match[$DB] Then
+				$iMatchMode = $DB
+				ExitLoop
+			EndIf
+		ElseIf $match[$LB] And Not $dbBase and $iChkDeploySettings[$LB]<>6 Then
 			SetLog($GetResourcesTXT, $COLOR_GREEN, "Lucida Console", 7.5)
 			SetLog("      " & "Live Base Found!", $COLOR_GREEN, "Lucida Console", 7.5)
 			$logwrited = True
-			$iMatchMode = $LB
-			ExitLoop
-		ElseIf $match[$LB] Or $match[$DB] And $iChkDeploySettings[$LB] <> 6 Then
+			
+			If $iChkMeetOne[$LB] = 0 Then
+				If $iChkNoLeague[$LB] = 1 Then
+					If _CheckPixel($aNoLeague, True) Then
+						SetLog("      " & "Live Base is not in a league.", $COLOR_GREEN, "Lucida Console", 7.5)
+					Else
+						SetLog("      " & "Live Base is in a league.", $COLOR_RED, "Lucida Console", 7.5)
+						$match[$LB] = False ; skip attack
+					EndIf
+				EndIf
+			EndIf
+			If $match[$LB] Then
+				$iMatchMode = $LB
+				ExitLoop
+			EndIf
+		ElseIf $match[$LB] Or $match[$DB]  and $iChkDeploySettings[$LB]<>6 Then
 			If $OptBullyMode = 1 And ($SearchCount >= $ATBullyMode) Then
 				If $SearchTHLResult = 1 Then
 					SetLog($GetResourcesTXT, $COLOR_GREEN, "Lucida Console", 7.5)
