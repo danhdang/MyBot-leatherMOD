@@ -39,7 +39,7 @@ EndIf
 #include "COCBot\MBR Global Variables.au3"
 
 $sBotVersion = "v5.3.2" ;~ Don't add more here, but below. Version can't be longer than vX.y.z because it it also use on Checkversion()
-$sBotTitle = "My Bot " & $sBotVersion & " - leatherMOD v1.1 " ;~ Don't use any non file name supported characters like \ / : * ? " < > |
+$sBotTitle = "My Bot " & $sBotVersion & " - leatherMOD v1.2 " ;~ Don't use any non file name supported characters like \ / : * ? " < > |
 
 ; Luna Eclipse
 Global $sBotTitleDefault = $sBotTitle
