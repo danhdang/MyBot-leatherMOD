@@ -94,7 +94,17 @@ ECHO.
 
 choice /c 1234567890 /n
 
-IF "%errorlevel%" == "1" (
+IF "%errorlevel%" == "10" (
+	ECHO Starting MyBot With MEmu
+	start MyBot.run.exe %pro% MEmu && (
+		echo MyBot started successfully!
+		SET /A pro=%pro%+1
+	) || (
+		echo Starting MyBot failed!
+	)
+	PAUSE
+	GOTO memuoptions
+) ELSE IF "%errorlevel%" == "1" (
 	ECHO Starting MyBot With MEmu_1
 	start MyBot.run.exe %pro% MEmu MEmu_1 && (
 		echo MyBot started successfully!
@@ -168,16 +178,6 @@ IF "%errorlevel%" == "1" (
 	GOTO memutype
 ) ELSE IF "%errorlevel%" == "9" (
 	GOTO input
-) ELSE IF "%errorlevel%" == "10" (
-	ECHO Starting MyBot With MEmu
-	start MyBot.run.exe %pro% MEmu && (
-		echo MyBot started successfully!
-		SET /A pro=%pro%+1
-	) || (
-		echo Starting MyBot failed!
-	)
-	PAUSE
-	GOTO memuoptions
 ) ELSE (
 	ECHO Wrong Input
 	GOTO memuoptions
