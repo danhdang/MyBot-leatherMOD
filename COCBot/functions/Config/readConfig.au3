@@ -463,8 +463,15 @@ Func readConfig() ;Reads config and sets it to the variables
 		$fulltroop = IniRead($config, "troop", "fullTroop", "100")
 
 		$isldTrainITDelay = IniRead($config, "troop", "TrainITDelay", "20")
-		;barracks boost not saved (no use)
 		
+		; Boost  -------------------------------------------------------------------------------
+		$iCmbQuantBoostBarracks = IniRead($config, "troop", "QuantBoostBarracks", "0")
+		$iCmbBoostBarracks = IniRead($config, "troop", "BoostBarracks", "0")
+		$iCmbBoostSpellFactory = IniRead($config, "troop", "BoostSpellFactory", "0")
+		$iCmbBoostDarkSpellFactory = IniRead($config, "troop", "BoostDarkSpellFactory", "0")
+		$iCmbBoostBarbarianKing = IniRead($config, "troop", "BoostBarbarianKing", "0")
+		$iCmbBoostArcherQueen = IniRead($config, "troop", "BoostArcherQueen", "0")
+		$iCmbBoostWarden = IniRead($config, "troop", "BoostWarden", "0")
 		$iChkDontRemove = IniRead($config, "troop", "DontRemove", "0")
 		$iChkBarrackSpell = IniRead($config, "Spells", "BarrackSpell", "0")
 

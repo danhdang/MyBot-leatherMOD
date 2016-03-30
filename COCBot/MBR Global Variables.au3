@@ -1156,6 +1156,23 @@ If $aCmdLine[0] > 1 Then
 EndIf
 
 Global $iRadClickSpeedFast, $radClickSpeedFast, $radClickSpeedNormal
+
+Global $cmbQuantBoostBarracks
+Global $cmbBoostBarracks
+Global $cmbBoostSpellFactory
+Global $cmbBoostDarkSpellFactory
+Global $cmbBoostBarbarianKing
+Global $cmbBoostArcherQueen
+Global $cmbBoostWarden
+
+Global $iCmbQuantBoostBarracks
+Global $iCmbBoostBarracks
+Global $iCmbBoostSpellFactory
+Global $iCmbBoostDarkSpellFactory
+Global $iCmbBoostBarbarianKing
+Global $iCmbBoostArcherQueen
+Global $iCmbBoostWarden
+
 Global $dbBase
 Global $TroopDropNumber = 0
 Global $remainingTroops[12][2]

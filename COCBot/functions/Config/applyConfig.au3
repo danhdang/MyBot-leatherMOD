@@ -1024,7 +1024,6 @@ Func applyConfig($bRedrawAtExit = True) ;Applies the data from config to the con
 	GUICtrlSetData($txtFullTroop, $fulltroop)
 	GUICtrlSetData($sldTrainITDelay, $isldTrainITDelay)
 	GUICtrlSetData($lbltxtTrainITDelay, "delay " & $isldTrainITDelay & " ms.")
-	;barracks boost not saved (no use)
 
 	If $iChkDontRemove = 1 Then
 		GUICtrlSetState($chkDontRemove, $GUI_CHECKED)
@@ -1037,6 +1036,16 @@ Func applyConfig($bRedrawAtExit = True) ;Applies the data from config to the con
 	Else
 		GUICtrlSetState($chkBarrackSpell, $GUI_UNCHECKED)
 	EndIf
+
+	
+	; Boost  -------------------------------------------------------------------------------
+	_GUICtrlComboBox_SetCurSel($cmbQuantBoostBarracks, $iCmbQuantBoostBarracks)
+	_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, $iCmbBoostBarracks)
+	_GUICtrlComboBox_SetCurSel($cmbBoostSpellFactory, $iCmbBoostSpellFactory)
+	_GUICtrlComboBox_SetCurSel($cmbBoostDarkSpellFactory, $iCmbBoostDarkSpellFactory)
+	_GUICtrlComboBox_SetCurSel($cmbBoostBarbarianKing, $iCmbBoostBarbarianKing)
+	_GUICtrlComboBox_SetCurSel($cmbBoostArcherQueen, $iCmbBoostArcherQueen)
+	_GUICtrlComboBox_SetCurSel($cmbBoostWarden, $iCmbBoostWarden)
 
 	; Spells Creation  ---------------------------------------------------------------------
 	GUICtrlSetData($txtNumLightningSpell, $iLightningSpellComp)

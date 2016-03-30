@@ -933,7 +933,14 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "troop", "fulltroop", GUICtrlRead($txtFullTroop))
 	IniWrite($config, "troop", "TrainITDelay", GUICtrlRead($sldTrainITDelay))
 
-	;barracks boost not saved (no use)
+	; Boost  -------------------------------------------------------------------------------
+	IniWrite($config, "troop", "QuantBoostBarracks", _GUICtrlComboBox_GetCurSel($cmbQuantBoostBarracks))
+	IniWrite($config, "troop", "BoostBarracks", _GUICtrlComboBox_GetCurSel($cmbBoostBarracks))
+	IniWrite($config, "troop", "BoostSpellFactory", _GUICtrlComboBox_GetCurSel($cmbBoostSpellFactory))
+	IniWrite($config, "troop", "BoostDarkSpellFactory", _GUICtrlComboBox_GetCurSel($cmbBoostDarkSpellFactory))
+	IniWrite($config, "troop", "BoostBarbarianKing", _GUICtrlComboBox_GetCurSel($cmbBoostBarbarianKing))
+	IniWrite($config, "troop", "BoostArcherQueen", _GUICtrlComboBox_GetCurSel($cmbBoostArcherQueen))
+	IniWrite($config, "troop", "BoostWarden", _GUICtrlComboBox_GetCurSel($cmbBoostWarden))
 	
 	If GUICtrlRead($chkDontRemove) = $GUI_CHECKED Then
 		IniWrite($config, "troop", "DontRemove", 1)
