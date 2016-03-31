@@ -96,7 +96,7 @@ choice /c 1234567890 /n
 
 IF "%errorlevel%" == "10" (
 	ECHO Starting MyBot With MEmu
-	start MyBot.run.exe %pro% MEmu && (
+	start MyBot.run.exe %pro% MEmu MEmu && (
 		echo MyBot started successfully!
 		SET /A pro=%pro%+1
 	) || (
