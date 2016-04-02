@@ -33,7 +33,8 @@ MAKE  |M          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1
 
       |VECTOR_____|INDEX______|QTY_X_VECT_|TROOPNAME__|DELAY_DROP_|DELAYCHANGE|SLEEPAFTER_|___________|
 DROP  |A-B        |1-5        |3          |giant      |0          |0          |3500       |           |launch 6 giants
-DROP  |G          |5          |2          |wall       |0          |0          |400        |           |launch 2 wall breakers
+DROP  |G          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
+DROP  |H          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
 DROP  |J-K        |5-9        |5          |barb       |0          |0          |100		  |           |launch 10 funnel creating barbarians
 DROP  |L-M        |5-9        |5          |arch       |0          |0          |100	      |           |launch 10 funnel creating archers 
 DROP  |I          |1          |1          |RSpell     |0          |0          |500        |           |Drop Rage Spell

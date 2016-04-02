@@ -186,6 +186,7 @@ Func runBot() ;Bot that runs everything in order
 	    If checkAndroidTimeLag() = True Then ContinueLoop
 		If $Is_ClientSyncError = False And $Is_SearchLimit = False Then
 			If BotCommand() Then btnStop()
+			RequestCC()
 			If _Sleep($iDelayRunBot2) Then Return
 			checkMainScreen(False)
 			If $Restart = True Then ContinueLoop
@@ -197,6 +198,7 @@ Func runBot() ;Bot that runs everything in order
 			;EndIf
 			If $RequestScreenshot = 1 Then PushMsg("RequestScreenshot")
 			If _Sleep($iDelayRunBot3) Then Return
+			RequestCC()
 			VillageReport()
 			If $OutOfGold = 1 And (Number($iGoldCurrent) >= Number($itxtRestartGold)) Then ; check if enough gold to begin searching again
 				$OutOfGold = 0 ; reset out of gold flag
@@ -219,6 +221,28 @@ Func runBot() ;Bot that runs everything in order
 			If _Sleep($iDelayRunBot5) Then Return
 				checkMainScreen(False)
 				If $Restart = True Then ContinueLoop
+
+			RequestCC()
+				If $Restart = True Then ContinueLoop
+
+			If checkAndroidTimeLag() = True Then ContinueLoop
+			Train()
+				If _Sleep($iDelayRunBot1) Then Return
+				checkMainScreen(False)
+				If $Restart = True Then ContinueLoop
+			BoostBarracks()
+				If $Restart = True Then ContinueLoop
+			BoostSpellFactory()
+				If $Restart = True Then ContinueLoop
+			BoostDarkSpellFactory()
+				If $Restart = True Then ContinueLoop
+			BoostKing()
+				If $Restart = True Then ContinueLoop
+			BoostQueen()
+				If $Restart = True Then ContinueLoop
+			BoostWarden()
+				If $Restart = True Then ContinueLoop
+
 			Collect()
 				If _Sleep($iDelayRunBot1) Then Return
 				If $Restart = True Then ContinueLoop
@@ -240,23 +264,6 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False) ; required here due to many possible exits
 				If $Restart = True Then ContinueLoop
 			If checkAndroidTimeLag() = True Then ContinueLoop
-			Train()
-				If _Sleep($iDelayRunBot1) Then Return
-				checkMainScreen(False)
-				If $Restart = True Then ContinueLoop
-			If checkAndroidTimeLag() = True Then ContinueLoop
-			BoostBarracks()
-				If $Restart = True Then ContinueLoop
-			BoostSpellFactory()
-				If $Restart = True Then ContinueLoop
-			BoostDarkSpellFactory()
-				If $Restart = True Then ContinueLoop
-			BoostKing()
-				If $Restart = True Then ContinueLoop
-			BoostQueen()
-				If $Restart = True Then ContinueLoop
-			BoostWarden()
-				If $Restart = True Then ContinueLoop
 			If $iUnbreakableMode >= 1 Then
 				If Unbreakable() = True Then ContinueLoop
 			EndIf
@@ -338,6 +345,7 @@ Func Idle() ;Sequence that runs until Full Army
 		If ($CommandStop = 3 Or $CommandStop = 0) Then
 			CheckOverviewFullArmy(True)
 			If _Sleep($iDelayIdle1) Then Return
+			RequestCC()
 			getArmyHeroCount(True, True)
 			If Not ($fullArmy) And $bTrainEnabled = True Then
 				SetLog("Army Camp and Barracks are not full, Training Continues...", $COLOR_ORANGE)
@@ -346,6 +354,18 @@ Func Idle() ;Sequence that runs until Full Army
 		EndIf
 		ReplayShare($iShareAttackNow)
 		If _Sleep($iDelayIdle1) Then Return
+		BoostBarracks()
+			If $Restart = True Then ContinueLoop
+		BoostSpellFactory()
+			If $Restart = True Then ContinueLoop
+		BoostDarkSpellFactory()
+			If $Restart = True Then ContinueLoop
+		BoostKing()
+			If $Restart = True Then ContinueLoop
+		BoostQueen()
+			If $Restart = True Then ContinueLoop
+		BoostWarden()
+			If $Restart = True Then ContinueLoop
 		CleanYard()
 		If $Restart = True Then ExitLoop
 		If $iCollectCounter > $COLLECTATCOUNT Then ; This is prevent from collecting all the time which isn't needed anyway
