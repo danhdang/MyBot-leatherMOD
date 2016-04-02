@@ -35,18 +35,18 @@ MAKE  |M          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1
 DROP  |A-B        |1-5        |3          |giant      |0          |0          |3500       |           |launch 6 giants
 DROP  |G          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
 DROP  |H          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
-DROP  |J-K        |5-9        |5          |barb       |0          |0          |100		  |           |launch 10 funnel creating barbarians
-DROP  |L-M        |5-9        |5          |arch       |0          |0          |100	      |           |launch 10 funnel creating archers 
+DROP  |J-K        |5-10       |10         |barb       |0          |0          |100		  |           |launch 20 funnel creating barbarians
+DROP  |L-M        |5-10       |5          |arch       |0          |0          |100	      |           |launch 10 funnel creating archers 
 DROP  |I          |1          |1          |RSpell     |0          |0          |500        |           |Drop Rage Spell
 DROP  |G          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers into rage
-DROP  |H          |5          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
+DROP  |H          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
 DROP  |A-B        |1-2        |7          |giant      |0          |0          |1200       |           |launch 2nd wave of giants
 DROP  |G          |1          |2          |wall       |0          |0          |1300       |           |launch 2 wall breakers into rage
 DROP  |G          |1          |2          |wall       |0          |0          |1300       |           |launch 2 wall breakers into rage
 DROP  |H          |1          |2          |wall       |0          |0          |1300       |           |launch 2 wall breakers into rage
-DROP  |G          |1          |2          |wall       |0          |0          |500        |           |launch 2 wall breakers into rage
-DROP  |A-B        |1-2        |30         |barb       |0          |0          |2000       |           |launch rest of barbarians to core
-DROP  |C-D        |1-2        |30         |arch       |0          |0          |1000       |           |launch rest of archers to core
+DROP  |G          |1          |2          |wall       |0          |0          |2000       |           |launch 2 wall breakers into rage
+DROP  |A-B        |1          |20         |barb       |0          |0          |2000       |           |launch rest of barbarians to core
+DROP  |C-D        |1          |30         |arch       |0          |0          |1000       |           |launch rest of archers to core
 DROP  |A          |1          |1          |castle     |0          |0          |100-300    |           |launch Castle  
 DROP  |A          |1          |1          |king       |0          |0          |100-300    |           |launch King   
 DROP  |A          |1          |1          |queen      |0          |0          |100-300    |           |launch Queen  
