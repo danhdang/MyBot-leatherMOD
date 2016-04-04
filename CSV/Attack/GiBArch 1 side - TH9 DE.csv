@@ -23,7 +23,7 @@ MAKE  |E          |FRONT-LEFT |10         |2          |INT-EXT    |0          |3
 MAKE  |F          |FRONT-RIGHT|10         |2          |INT-EXT    |0          |3          |           |vector for goblins front right
 MAKE  |G          |FRONT-LEFT |10         |1          |INT-EXT    |0          |1          |           |vector for wall breakers front left
 MAKE  |H          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1          |           |vector for wall breakers front right
-MAKE  |I          |FRONT-LEFT |60         |-6         |INT-EXT    |0          |1          |           |vector for rage spell
+MAKE  |I          |FRONT-LEFT |60         |-7         |INT-EXT    |0          |1          |           |vector for rage spell
 MAKE  |J          |FRONT-LEFT |10         |1          |INT-EXT    |0          |1          |           |vector for first wave of barbs front left 
 MAKE  |K          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1          |           |vector for first wave of barbs front right 
 MAKE  |L          |FRONT-LEFT |10         |1          |INT-EXT    |0          |1          |           |vector for first wave of archers front left
@@ -32,14 +32,14 @@ MAKE  |M          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1
 
 
       |VECTOR_____|INDEX______|QTY_X_VECT_|TROOPNAME__|DELAY_DROP_|DELAYCHANGE|SLEEPAFTER_|___________|
-DROP  |A-B        |1-5        |3          |giant      |0          |0          |3500       |           |launch 6 giants
-DROP  |G          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
-DROP  |H          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
-DROP  |J-K        |5-10       |10         |barb       |0          |0          |100		  |           |launch 20 funnel creating barbarians
-DROP  |L-M        |5-10       |5          |arch       |0          |0          |100	      |           |launch 10 funnel creating archers 
-DROP  |I          |1          |1          |RSpell     |0          |0          |500        |           |Drop Rage Spell
+DROP  |A-B        |1-5        |3          |giant      |0          |0          |2500       |           |launch 6 giants
+DROP  |G          |1          |2          |wall       |0          |0          |200        |           |launch 2 wall breakers
+DROP  |H          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers
+DROP  |J-K        |6-10       |5          |barb       |0          |0          |200		  |           |launch 20 funnel creating barbarians
+DROP  |L-M        |6-10       |5          |arch       |0          |0          |200	      |           |launch 10 funnel creating archers 
+DROP  |I          |1          |1          |RSpell     |0          |0          |400        |           |Drop Rage Spell
 DROP  |G          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers into rage
-DROP  |H          |1          |2          |wall       |0          |0          |0          |           |launch 2 wall breakers
+DROP  |H          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers
 DROP  |A-B        |1-2        |7          |giant      |0          |0          |1200       |           |launch 2nd wave of giants
 DROP  |G          |1          |2          |wall       |0          |0          |1300       |           |launch 2 wall breakers into rage
 DROP  |G          |1          |2          |wall       |0          |0          |1300       |           |launch 2 wall breakers into rage
