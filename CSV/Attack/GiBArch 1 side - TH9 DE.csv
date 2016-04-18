@@ -2,7 +2,7 @@ NOTE  |Optimized for TH9 with 220 troop space and LVL 6 Giants
 NOTE  |
 NOTE  |Make these Troops: 20 Giants, 12 WB's, Barb 42%, Arch 58% (auto-train Rage Spells)
 NOTE  |
-NOTE  |By: leatherneck6017 - updated on 3/30/16
+NOTE  |By: leatherneck6017 - updated on 4/04/16
 NOTE  |
 NOTE  |Description: Will drop giants, barbs & arch, then rage and send wb's to break into core.
 
@@ -35,9 +35,9 @@ MAKE  |M          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |1
 DROP  |A-B        |1-5        |3          |giant      |0          |0          |2500       |           |launch 6 giants
 DROP  |G          |1          |2          |wall       |0          |0          |200        |           |launch 2 wall breakers
 DROP  |H          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers
-DROP  |J-K        |6-10       |5          |barb       |0          |0          |200		  |           |launch 20 funnel creating barbarians
-DROP  |L-M        |6-10       |5          |arch       |0          |0          |200	      |           |launch 10 funnel creating archers 
-DROP  |I          |1          |1          |RSpell     |0          |0          |400        |           |Drop Rage Spell
+DROP  |J-K        |6-10       |10         |barb       |0          |0          |200		  |           |launch 20 funnel creating barbarians
+DROP  |L-M        |6-10       |5          |arch       |0          |0          |600	      |           |launch 10 funnel creating archers 
+DROP  |I          |1          |1          |RSpell     |0          |0          |200        |           |Drop Rage Spell
 DROP  |G          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers into rage
 DROP  |H          |1          |2          |wall       |0          |0          |100        |           |launch 2 wall breakers
 DROP  |A-B        |1-2        |7          |giant      |0          |0          |1200       |           |launch 2nd wave of giants
